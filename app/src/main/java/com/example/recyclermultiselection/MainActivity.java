@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         createList();
 
+
         btnGetSelected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
     }
 
     private void createList() {
@@ -65,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
             employees.add(employee);
         }
         adapter.setEmployees(employees);
+
+
     }
 
     private void showToast(String msg) {

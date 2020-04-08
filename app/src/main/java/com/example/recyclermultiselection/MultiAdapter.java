@@ -60,10 +60,26 @@ public class MultiAdapter extends RecyclerView.Adapter<MultiAdapter.MultiViewHol
             imageView.setVisibility(employee.isChecked() ? View.VISIBLE : View.GONE);
             textView.setText(employee.getName());
 
+
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    if (getSelected().size()== 3 && !employee.isChecked()){
+                        return;
+                    }
+
+                    addingAndDeleting();
+
+                }
+
+                private void addingAndDeleting() {
+                    // do your click stuff
+                    //set checked to status of opposite of is checked
                     employee.setChecked(!employee.isChecked());
+
+                    //Set visibility accordingly
                     imageView.setVisibility(employee.isChecked() ? View.VISIBLE : View.GONE);
                 }
             });
